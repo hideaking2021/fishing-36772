@@ -1,0 +1,54 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <p class="prototype__hedding">
+        <%= @fishing.title%>
+      </p>
+      <%= link_to "#{@fishing.user.name}", root_path, class: :prototype__user %>
+      <div class="prototype__image">
+        <%= image_tag @fishing.image %>
+      </div>
+      <% if user_signed_in? && current_user.id == @fishing.user_id %>
+        <div class="prototype__manage">
+          <%= link_to "編集", edit_fishing_path(@fishing.id), class: :prototype__btn %>
+          <%= link_to "削除", fishing_path(@fishing.id), method: :delete, class: :prototype__btn %>
+        </div>
+      <% end %>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">釣果場所</p>
+          <p class="detail__message">
+            <%= @fishing.catch_copy %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">釣果の餌（ルアー）</p>
+          <p class="detail__message">
+            <%= @fishing.concept %>
+          </p>
+        </div>
+      </div>
+      <div class="prototype__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <%# <%= form_with model: モデル名,local: true do |f|%>
+            <div class="field">
+              <%# <%= f.label :hoge, "コメント" %><br />
+              <%# <%= f.text_field :hoge, id:"comment_content" %>
+            </div>
+            <div class="actions">
+              <%# <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <%# <% end %>
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <li class="comments_list">
+              <%# <%= " コメントのテキスト "%>
+              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
+            </li>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

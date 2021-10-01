@@ -16,13 +16,13 @@
 - has_many :comments
 
 ## fishings
-| Column      | Type            | Options     |
-| ----------- | ----------------| ----------- |
-| title       | string          | null: false |
-| catch_copy  | text            | null: false |
-| concept     | text            | null: false |
-| image       | ActiveStorage   |             |
-| user        | references      |             |
+| Column      | Type            | Options                        |
+| ----------- | ----------------| -------------------------------|
+| title       | string          | null: false                    |
+| catch_copy  | text            | null: false                    |
+| concept     | text            | null: false                    |
+| image       | ActiveStorage   |                                |
+| user        | references      | null: false, foreign_key: true |
 
 ### Association
 

@@ -1,0 +1,10 @@
+<div class="card">
+  <%= link_to image_tag(fishing.image, class: :card__img ),  fishing_path(fishing.id)%>
+  <div class="card__body">
+    <%= link_to fishing.title, fishing_path(fishing.id), class: :card__title%>
+    <p class="card__summary">
+      <%= fishing.catch_copy %>
+    </p>
+    <%= link_to "by #{fishing.user.name} ", fishing_path(fishing.id), class: :card__user %>
+  </div>
+</div>
