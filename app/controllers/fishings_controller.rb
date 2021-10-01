@@ -10,6 +10,8 @@ class FishingsController < ApplicationController
 
   def show
     @fishing = Fishing.find(params[:id])
+    @comment = Comment.new
+    @comments = @fishing.comments.includes(:user)
   end
 
   def create

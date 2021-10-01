@@ -269,7 +269,7 @@ a {
 /* フッター */
 
 .footer {
-  background-color: #999;
+  background-color: rgb(73, 112, 240);
   padding: 10px 0;
 }
 .copyright {

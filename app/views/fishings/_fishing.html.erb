@@ -5,6 +5,6 @@
     <p class="card__summary">
       <%= fishing.catch_copy %>
     </p>
-    <%= link_to "by #{fishing.user.name} ", fishing_path(fishing.id), class: :card__user %>
+    <%= link_to "angler #{fishing.user.name} ", fishing_path(fishing.id), class: :card__user %>
   </div>
 </div>
