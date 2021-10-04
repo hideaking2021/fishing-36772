@@ -26,6 +26,9 @@ class FishingsController < ApplicationController
 
   def edit
     @fishing = Fishing.find(params[:id])
+    if current_user != @fishing.user
+      redirect_to action: :index
+    end
   end
 
   def update

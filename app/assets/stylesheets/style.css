@@ -161,6 +161,12 @@ a {
   text-decoration: underline;
 }
 
+#image-list{
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
 /* 詳細ページ */
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
@@ -234,6 +240,7 @@ a {
   color: #999;
   text-decoration: underline;
 }
+
 
 /* ユーザーページ */
 .user__wrapper{
