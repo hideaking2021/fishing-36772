@@ -13,4 +13,12 @@ class Fishing < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
+  def self.search(search)
+    if search != ""
+      Fishing.where('title LIKE(?)', "%#{search}%")
+    else
+      Fishing.all
+    end
+  end
+
 end

@@ -46,6 +46,10 @@ class FishingsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @fishings = Fishing.search(params[:keyword])
+  end
+
 
   private
   def fishing_params
