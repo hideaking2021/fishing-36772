@@ -1,5 +1,12 @@
-<div class="contents row">
+<main class="main">
+  <div class="inner">
+    <div class="searching">
+        <%= "検索結果" %>
+    </div>
+  <div class="contents_row">
   <% @fishings.each do |fishing| %>
     <%= render partial: "fishing", locals: { fishing: fishing } %>
   <% end %>
+  </div>
 </div>
+</main>

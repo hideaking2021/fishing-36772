@@ -38,7 +38,6 @@ a {
 
 .header {
   background-color: #c7d7eb;
-  margin-bottom: 40px;
   padding: 20px 0;
 
 }
@@ -53,15 +52,16 @@ a {
 }
 .logo {
   width: 100px;
+  margin-bottom: 10px;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #247ac0;
+  color: #0e5d9e;
   text-decoration: none;
   user-select: none;
-  border: 1px #598aa8 solid;
+  border: 1px #0b3853 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -74,7 +74,7 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #0e5079;
   text-decoration: none;
   user-select: none;
 }
@@ -85,6 +85,7 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  padding-top: 20px;
 }
 
 .form__text {
@@ -120,8 +121,13 @@ a {
 
 /* メイン */
 
+.main{
+  background-color: #d9eaec;
+}
+
 .greeting{
   margin-bottom: 20px;
+  padding-top: 20px;
   font-size: 30px;
 }
 .greeting__link{
@@ -168,18 +174,33 @@ a {
   object-fit: contain;
 }
 
+.searching{
+  font-size: 30px;
+  padding-top: 30px;
+}
+
+.contents_row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+}
+
+
 /* 詳細ページ */
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
+  padding-top: 20px;
 }
 .prototype__hedding{
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
 .prototype__user{
   display: block;
-  font-size: 16px;
+  font-size: 25px;
   color: #999;
   text-align: center;
   text-decoration: underline;
@@ -224,7 +245,7 @@ a {
 .prototype__comments{
   background-color: #f6f6f6;
   padding: 20px;
-  margin: 28px 0 40px 0;
+  margin:  0 40px 0;
 }
 
 .comments_lists{
@@ -246,6 +267,7 @@ a {
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
+  padding-top: 20px;
 }
 .table{
   border-collapse: collapse;

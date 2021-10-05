@@ -6,5 +6,9 @@
       <%= fishing.catch_copy %>
     </p>
     <%= link_to "angler #{fishing.user.name} ", fishing_path(fishing.id), class: :card__user %>
+    <div class=“fishing-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= l fishing.created_at %>
+    </div>
   </div>
 </div>
