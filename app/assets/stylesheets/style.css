@@ -128,7 +128,7 @@ a {
 .tooking{
   font-size: 30px;
   text-align:  center;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .greeting{
@@ -200,6 +200,11 @@ a {
   min-height: calc(100vh - 161px);
 }
 
+.pagination{
+  font-size: 20px;
+  text-align:  center;
+  padding-bottom: 20px;
+}
 
 /* 詳細ページ */
 .prototype__wrapper{
