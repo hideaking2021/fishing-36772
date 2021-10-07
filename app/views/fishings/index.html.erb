@@ -1,6 +1,9 @@
 <main class="main">
   <div class="inner">
     <% if user_signed_in? %>
+    <div class="tooking">
+    <%= "釣果を投稿しよう！" %>
+    </div>
       <div class="greeting">
         <%= "WELCOM!" %>
         <%= link_to "#{current_user.name}", user_path(current_user.id), class: :greeting__link%>
@@ -9,5 +12,6 @@
     <div class="card__wrapper">
       <%= render partial: 'fishing', collection: @fishing %>
     </div>
+    <%= paginate @fishing %>
   </div>
 </main>

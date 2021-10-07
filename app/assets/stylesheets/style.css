@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #c7d7eb;
+  background-color: #daf1ff;
   padding: 20px 0;
 
 }
@@ -122,14 +122,26 @@ a {
 /* メイン */
 
 .main{
-  background-color: #d9eaec;
+  background: radial-gradient(ellipse at center, rgb(138, 190, 243) 0%,rgb(175, 212, 248) 28%,rgb(186, 217, 248) 18%,rgb(255, 255, 255) 70%);
+}
+
+.tooking{
+  font-size: 30px;
+  text-align:  center;
+  padding-top: 10px;
 }
 
 .greeting{
   margin-bottom: 20px;
   padding-top: 20px;
   font-size: 30px;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+
 .greeting__link{
   text-decoration: underline;
 }
@@ -143,6 +155,7 @@ a {
   justify-content: space-between;
   align-items: center;
   min-height: calc(100vh - 161px);
+  padding-top: 20px;
 }
 .card {
   width: calc((100% - 50px) / 3);
@@ -224,26 +237,28 @@ a {
   display: flex;
   justify-content: center;
   padding-top: 16px;
+  font-size: 30px;
+  padding-bottom: 10px;
 }
 .prototype__btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
-  color: #999;
+  color: rgb(76, 120, 216);
   text-decoration: none;
   user-select: none;
-  border: 1px #999 solid;
+  border: 1px rgb(6, 10, 243) solid;
   border-radius: 3px;
   transition: 0.4s ease;
   margin: 0 4px;
 }
 .prototype__btn:hover{
   color: #fff;
-  background: #999;
+  background: rgb(160, 163, 187);
 }
 
 .prototype__comments{
-  background-color: #f6f6f6;
+  background-color: #d1eaf8;
   padding: 20px;
   margin:  0 40px 0;
 }

@@ -1,7 +1,7 @@
 class FishingsController < ApplicationController
 
   def index
-    @fishing = Fishing.includes(:user).order("created_at DESC")
+    @fishing = Fishing.includes(:user).order("created_at DESC").page(params[:page]).per(6)
   end
 
   def new
