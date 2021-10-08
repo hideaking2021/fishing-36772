@@ -8,6 +8,13 @@
       <div class="prototype__image">
         <%= image_tag @fishing.image %>
       </div>
+      <!-- いいね！ボタン -->
+      <div class="iine">
+        <%= form_with(model: @like, url: likes_path, local: true) do |f| %>
+          <%= f.hidden_field :fishing_id, value: @fishing.id %>
+          <%= f.submit 'いいね！' %>
+        <% end %>   
+      </div>
       <% if user_signed_in? && current_user.id == @fishing.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集", edit_fishing_path(@fishing.id), class: :prototype__btn %>
@@ -32,8 +39,8 @@
         <% if user_signed_in? %>
           <%= form_with model: [@fishing,@comment],local: true do |f|%>
             <div class="field">
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text, id:"comment_content" %>
+              <%= f.label :text, "✨どんな魚料理ができるかコメントしよう✨" %><br />
+              <%= f.text_area :text, id:"comment_content" ,size: 100%>
             </div>
             <div class="actions">
               <%= f.submit "投稿する", class: :form__btn  %>
@@ -44,8 +51,8 @@
           
           <% @comments.each do |comment| %>
             <li class="comments_list">
-              <%= comment.text %>
-              <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
+            <%= safe_join("#{comment.text}".split("\n"),tag(:br)) %>
+              <%= link_to "投稿者 #{comment.user.name}", "/users/#{comment.user_id}", class: :comment_user %>
             </li>
             <% end %>
           

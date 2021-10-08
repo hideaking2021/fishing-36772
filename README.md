@@ -14,6 +14,7 @@
 
 - has_many :fishings
 - has_many :comments
+- has_many :likes
 
 ## fishings
 | Column      | Type            | Options                        |
@@ -27,6 +28,7 @@
 ### Association
 
 - has_many :comments
+- has_many :likes
 - belongs_to :user
 
 ## comments
@@ -35,6 +37,18 @@
 | text        | text            | null: false |
 | user        | references      |             |
 | fishing     | references      |             |
+
+### Association
+
+- belongs_to :user
+- belongs_to :fishing
+
+## likes
+
+| Column      | Type            | Options                      |
+| ----------- | ----------------| -----------------------------|
+| user        | references      | foreign_key: true            |
+| fishing     | references      | foreign_key: true            |
 
 ### Association
 

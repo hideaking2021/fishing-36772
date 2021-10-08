@@ -12,6 +12,8 @@ class Fishing < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user
   has_one_attached :image
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes
 
   def self.search(search)
     if search != ""

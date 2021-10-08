@@ -15,6 +15,7 @@ class User < ApplicationRecord
 # Association
   has_many :fishings
   has_many :comments
-
+  has_many :likes
+  has_many :favorites, through: :likes, source: :fishing
 
 end

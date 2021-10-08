@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_083743) do
+ActiveRecord::Schema.define(version: 2021_10_07_113329) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 2021_10_01_083743) do
     t.index ["user_id"], name: "index_fishings_on_user_id"
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "fishing_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fishing_id"], name: "index_likes_on_fishing_id"
+    t.index ["user_id", "fishing_id"], name: "index_likes_on_user_id_and_fishing_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "rod", null: false
@@ -73,4 +83,6 @@ ActiveRecord::Schema.define(version: 2021_10_01_083743) do
   add_foreign_key "comments", "fishings"
   add_foreign_key "comments", "users"
   add_foreign_key "fishings", "users"
+  add_foreign_key "likes", "fishings"
+  add_foreign_key "likes", "users"
 end

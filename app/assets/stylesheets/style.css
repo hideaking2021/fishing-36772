@@ -94,10 +94,11 @@ a {
 
 .field{
   margin: 10px 0;
+  font-size: 15px;
 }
 
 .actions{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .form__btn{
@@ -190,6 +191,8 @@ a {
 .searching{
   font-size: 30px;
   padding-top: 30px;
+  padding-bottom: 20px;
+
 }
 
 .contents_row{
@@ -281,6 +284,12 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+}
+
+.iine{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
 
