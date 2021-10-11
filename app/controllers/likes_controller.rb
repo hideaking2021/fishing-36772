@@ -1,19 +1,19 @@
 class LikesController < ApplicationController
 
   def create
-    unless current_user.favorites.include?(clicked_fishing)
-      like = current_user.likes.new(fishing_id: clicked_fishing.id)
-
-      if like.save
-        flash[:success] = '投稿に「いいね！」しました。'
-        redirect_back(fallback_location: root_path)
-      end
-
-    else
-      flash[:alert] = 'すでに「いいね！」しています。'
-      redirect_back(fallback_location: root_path)
-    end
+    current_user.like_this(clicked_fishing)
+    flash[:success] = '投稿に「いいね！」しました。'
+    redirect_back(fallback_location: root_path)
+    # 前回の記事からelse以下の記述は削除
   end
+
+  # ↓前回の記事からここを追記！
+  def destroy
+    current_user.likes.find_by(fishing_id: params[:fishing_id]).destroy
+    flash[:danger] = '「いいね！」を解除しました。'
+    redirect_back(fallback_location: root_path)
+  end
+
 
   private
 

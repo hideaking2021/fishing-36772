@@ -8,13 +8,25 @@
       <div class="prototype__image">
         <%= image_tag @fishing.image %>
       </div>
-      <!-- いいね！ボタン -->
-      <div class="iine">
+       <!-- いいね！ボタン -->
+<div class="iine">
+    <div>
+      <!-- すでに「いいね！」されている時の表示 -->
+      <% if current_user.favorites.include?(@fishing) %>     
+        <%= form_with(model: @like, url: like_path(id: @fishing.id), local: true, method: :delete) do |f| %>
+          <%= f.hidden_field :fishing_id, value: @fishing.id %>
+          <%= f.submit 'いいね！解除' %>
+        <% end %>
+      <% else %>
+
+　　　　　<!-- まだ「いいね！」していない時の表示 -->
         <%= form_with(model: @like, url: likes_path, local: true) do |f| %>
           <%= f.hidden_field :fishing_id, value: @fishing.id %>
           <%= f.submit 'いいね！' %>
-        <% end %>   
-      </div>
+        <% end %>
+      <% end %>      
+    </div>
+</div>
       <% if user_signed_in? && current_user.id == @fishing.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集", edit_fishing_path(@fishing.id), class: :prototype__btn %>
@@ -39,7 +51,7 @@
         <% if user_signed_in? %>
           <%= form_with model: [@fishing,@comment],local: true do |f|%>
             <div class="field">
-              <%= f.label :text, "✨どんな魚料理ができるかコメントしよう✨" %><br />
+              <%= f.label :text, "✨釣果の感想、魚料理をコメントしよう✨" %><br />
               <%= f.text_area :text, id:"comment_content" ,size: 100%>
             </div>
             <div class="actions">
@@ -55,7 +67,6 @@
               <%= link_to "投稿者 #{comment.user.name}", "/users/#{comment.user_id}", class: :comment_user %>
             </li>
             <% end %>
-          
         </ul>
       </div>
     </div>

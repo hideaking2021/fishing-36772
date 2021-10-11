@@ -18,4 +18,8 @@ class User < ApplicationRecord
   has_many :likes
   has_many :favorites, through: :likes, source: :fishing
 
+  def like_this(clicked_fishing)
+    self.likes.find_or_create_by(fishing: clicked_fishing)
+  end
+
 end
