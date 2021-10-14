@@ -12,10 +12,12 @@
 <div class="iine">
     <div>
       <!-- すでに「いいね！」されている時の表示 -->
+      <% if user_signed_in?  %>
       <% if current_user.favorites.include?(@fishing) %>     
         <%= form_with(model: @like, url: like_path(id: @fishing.id), local: true, method: :delete) do |f| %>
           <%= f.hidden_field :fishing_id, value: @fishing.id %>
           <%= f.submit 'いいね！解除' %>
+          <%= @fishing.likes.count %>
         <% end %>
       <% else %>
 
@@ -23,7 +25,9 @@
         <%= form_with(model: @like, url: likes_path, local: true) do |f| %>
           <%= f.hidden_field :fishing_id, value: @fishing.id %>
           <%= f.submit 'いいね！' %>
+          <%= @fishing.likes.count %>
         <% end %>
+      <% end %>
       <% end %>      
     </div>
 </div>
