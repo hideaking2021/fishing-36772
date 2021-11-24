@@ -130,7 +130,12 @@ a {
   font-size: 30px;
   text-align:  center;
   padding-top: 20px;
-}
+  animation: key .3s ease infinite alternate;
+  }
+  @keyframes key {
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(-10px);}
+  }
 
 .greeting{
   margin-bottom: 20px;
