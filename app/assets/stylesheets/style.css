@@ -60,17 +60,17 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #0e5d9e;
+  color: #082b47;
   text-decoration: none;
   user-select: none;
-  border: 1px #0b3853 solid;
+  border: 1px #010608 solid;
   border-radius: 3px;
   transition: 0.4s ease;
-}
-.nav__btn:hover{
   color: #fff;
   background: #2f80b3;
+  opacity: 0.9;
 }
+
 
 .nav__logout{
   display: inline-block;
